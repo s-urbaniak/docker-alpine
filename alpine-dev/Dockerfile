@@ -1,4 +1,4 @@
-FROM s-urbaniak/alpine-glibc
+FROM alpine:3.1
 
 RUN echo 'http://dl-4.alpinelinux.org/alpine/edge/testing' >>/etc/apk/repositories
 
@@ -17,6 +17,7 @@ RUN apk --update add \
 	subversion-dev \
 	cyrus-sasl-dev \
 	ca-certificates \
+	fts-dev \
 	bash
 
 ENV JAVA_HOME /usr/lib/jvm/default-jvm
