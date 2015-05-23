@@ -20,5 +20,3 @@ ENV PATH ${PATH}:${JAVA_HOME}/bin
 # To fix this we just create /etc/nsswitch.conf and add the following line:
 RUN echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf
 
-ENTRYPOINT [ "java" ]
-CMD [ "-version" ]

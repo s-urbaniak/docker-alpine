@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# redirect stderr->stdout
+exec 2>&1
+
+# runsvdir-start clears environment variables
+# initially import all variables
+source /env.bash
+
+# start master (if not running)
+/usr/spark/bin/spark-submit --class org.apache.spark.deploy.master.Master $SPARK_MASTER_INSTANCE --port $SPARK_MASTER_PORT --webui-port $SPARK_WEBUI_PORT
+
